@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useWindowScroll } from "react-use";
 import { AiFillGithub } from "react-icons/ai";
 import { BsFillBrightnessHighFill } from "react-icons/bs";
+import { BsFillMoonFill } from "react-icons/bs";
 
 const nav = [
   {

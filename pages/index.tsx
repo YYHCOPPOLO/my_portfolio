@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Plum from "../components/layout/PlumTree";
-import Wrapper from "../components/layout/Wrapper";
-import Feed from "../components/home/Feed";
-import Header from "../components/layout/Header";
-import Avatar from "../components/home/Avatar";
+import Plum from "../components/Layout/PlumTree";
+import Wrapper from "../components/Layout/Wrapper";
+import Feed from "../components/Home/Feed";
+import Header from "../components/Layout/Header";
+import Avatar from "../components/Home/Avatar";
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +12,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Coppolo Portfolio</title>
       </Head>
-      <Header />
       <Wrapper>
         <Avatar />
         <div className="mt-8">
