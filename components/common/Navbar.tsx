@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useWindowScroll } from "react-use";
 import { AiFillGithub } from "react-icons/ai";
 import { BsFillBrightnessHighFill } from "react-icons/bs";
@@ -21,14 +21,28 @@ const nav = [
   },
 ];
 
-function Navbar() {
+function Navbar({ mode, setMode }: { mode: string; setMode: any }) {
+  // TODO: scroll glass effect
   const isScroll = useWindowScroll();
   const isPageHover = useMemo(() => {
     if (isScroll) return !!isScroll.y;
   }, [isScroll]);
 
+  useEffect(() => {
+    if (mode === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }, [mode]);
+
+  const toggleTheme = () => {
+    setMode((prev: string) => (prev === "light" ? "dark" : "light"));
+    localStorage.setItem("mode", mode === "light" ? "dark" : "light");
+  };
+
   return (
-    <header className={`sticky top-0 z-50 w-100vh py-1 px-20 `}>
+    <header className="sticky top-0 z-50 w-100vw py-1 px-20">
       <section className="flex w-full justify-between items-center">
         <Image
           src="/Signature.png"
@@ -53,12 +67,21 @@ function Navbar() {
             >
               <AiFillGithub />
             </a>
-            <a
-              href="https://github.com/YYHCOPPOLO"
-              className="cursor-pointer text-2xl transition-all duration-500 ease-out hover:rotate-180"
-            >
-              <BsFillBrightnessHighFill />
-            </a>
+            {mode === "light" ? (
+              <span
+                className="cursor-pointer text-2xl transition-all duration-500 ease-out hover:rotate-180"
+                onClick={toggleTheme}
+              >
+                <BsFillBrightnessHighFill />
+              </span>
+            ) : (
+              <span
+                className="cursor-pointer text-2xl transition-all duration-500 ease-out hover:rotate-180"
+                onClick={toggleTheme}
+              >
+                <BsFillMoonFill />
+              </span>
+            )}
           </nav>
         </div>
       </section>

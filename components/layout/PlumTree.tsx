@@ -10,7 +10,7 @@ const Plum = () => {
   const r180 = Math.PI;
   const r90 = Math.PI / 2;
   const r15 = Math.PI / 12;
-  const color = "#88888825";
+  const color = "#d7d7d724";
 
   const { random } = Math;
 

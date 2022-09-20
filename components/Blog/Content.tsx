@@ -1,14 +1,14 @@
 import Wrapper from "../Layout/Wrapper";
 import Post from "./Post";
 
-function Blog({ posts }: { posts: PostProps[] }) {
+function Blog({ posts }: { posts: any }) {
   return (
-    <Wrapper>
+    <div className="h-full flex-auto">
       <p className="font-bold text-2xl text-blue-500">2022</p>
-      <div className="flex flex-col items-center justify-content border-2 border-sky-500 rounded-full p-4 m-3 transition-transform duration-75 ease-in-out hover:scale-110">
+      <div className="flex flex-col justify-content">
         {posts
-          .filter((post: PostProps) => post.date.includes("2022"))
-          .map((post: PostProps) => (
+          .filter((post: any) => post.date.includes("2022"))
+          .map((post: any) => (
             <Post
               title={post.title}
               date={post.date}
@@ -17,7 +17,7 @@ function Blog({ posts }: { posts: PostProps[] }) {
             />
           ))}
       </div>
-    </Wrapper>
+    </div>
   );
 }
 

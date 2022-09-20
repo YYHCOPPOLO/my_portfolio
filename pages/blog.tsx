@@ -5,7 +5,7 @@ import Wrapper from "../components/Layout/Wrapper";
 
 function blog({ posts }: { posts: any }) {
   return (
-    <div>
+    <div className="h-full flex flex-col items-center justify-center">
       <Head>
         <title>Coppolo&apos;s Blog</title>
       </Head>
