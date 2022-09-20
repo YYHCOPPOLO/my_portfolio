@@ -9,6 +9,7 @@
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-icons": "^4.4.0",
     "react-use": "^17.4.0",
     "rehype-document": "^6.1.0",
     "rehype-format": "^4.0.1",
